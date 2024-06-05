@@ -3,11 +3,17 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import VCharts from 'v-charts'
 
 import 'echarts/lib/component/grid'
 
+import * as echarts from 'echarts';
 // 引入 ElementUI 响应式断点
 import 'element-ui/lib/theme-chalk/display.css';
+
+Vue.use(VCharts)
+Vue.prototype.$echarts = echarts
+
 
 Vue.config.productionTip = false
 // 引入及使用 ElementUI

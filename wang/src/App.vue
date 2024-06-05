@@ -1,9 +1,7 @@
 <template>
   <div class="app" id="app">
     <div class="banner">
-      <img class="hidden-md-only hidden-lg-only hidden-xl-only" :src="bannerXSSM" alt="banner 图">
-      <img class="hidden-xs-only hidden-sm-only hidden-lg-only hidden-xl-only" :src="bannerMD" alt="banner 图">
-      <img class="hidden-xs-only hidden-sm-only hidden-md-only" :src="bannerLGXL" alt="banner 图">
+      <img class="hidden-md-only hidden-lg-only hidden-xl-only" src="./assets/header_bg.png" alt="banner 图">
     </div>
     <!-- 第一行 -->
     <el-row>
@@ -40,9 +38,6 @@ export default {
   name: "App",
   data() {
     return {
-      // bannerXSSM: require("./assets/img/banner_640.png"),
-      // bannerMD: require("./assets/img/banner_1000.png"),
-      // bannerLGXL: require("./assets/img/banner.png"),
     };
   }
 };
