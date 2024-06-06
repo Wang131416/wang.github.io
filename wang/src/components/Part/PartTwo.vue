@@ -2,6 +2,7 @@
   <div class="part-two" id="part-two"></div>
 </template>
 
+
 <script>
 
 export default {
