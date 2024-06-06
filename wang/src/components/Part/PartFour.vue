@@ -1,16 +1,18 @@
 
 <template>
   <div :class="partFive">
-    <h3 class="text-center text-top">项目介绍</h3>
+    <h3 class="text-center text-top">上家公司及成就</h3>
     <p>
-      <a href="javascript:void(0)">北京联方智慧科技有限公司</a>
+      <a href="http://36.133.245.88/">北京联方智慧科技有限公司</a>
       <span class="text-small">| 2023/04 - 至今</span>
     </p>
     <div class="text-small">工作内容：Vue + ECharts</div>
     <div class="text-small">成就：</div>
-    <div class="text-small" style="text-indent: 32px">&emsp;<span class="font-bold">1.</span> 首页数据可视化模块，首屏显示速度增加，与后端协同开发</div>
-    <div class="text-small" style="text-indent: 32px"><span class="font-bold">2.</span> ECharts 报表汇总。使用 Vue + ECharts 进行报表设计</div>
-    <div class="text-small" style="text-indent: 32px"><span class="font-bold">3. </span>项目的样式更替</div>
+    <div class="text-small" style="text-indent: 32px;margin-top: 4px"><span class="font-bold">1.</span>首页数据可视化模块，首屏显示速度增加，与后端协同开发</div>
+    <div class="text-small" style="text-indent: 32px;margin-top: 4px"><span class="font-bold">2.</span> ECharts 报表汇总。使用 Vue + ECharts 进行报表设计</div>
+    <div class="text-small" style="text-indent: 32px;margin-top: 4px"><span class="font-bold">3. </span>紧急项目加班不含糊</div>
+    <div class="text-small" style="text-indent: 32px;margin-top: 4px"><span class="font-bold">4. </span>听从领导指挥，踏实肯干</div>
+    <div class="text-small" style="text-indent: 32px;margin-top: 4px"><span class="font-bold">5. </span>OSP低代码的贡献及建议</div>
   </div>
 </template>
 

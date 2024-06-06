@@ -6,9 +6,9 @@
     </div>
     <div class="text-small"><span class="font-bold">项目介绍：</span>面对河北高速集团各个集团的事故、信息、教育等的一些汇总。</div>
     <div class="text-small font-bold">主要负责：</div>
-    <div class="text-small"  style="text-indent: 32px"><span class="font-bold">1. </span>负责了首页数据可视化模块。使用 Echarts 图表库实现了多种数据可视化效果，包括柱状图、折线图、饼图等，可以让用户更好地了解数据情况。</div>
-    <div class="text-small"  style="text-indent: 32px"><span class="font-bold">2. </span>实现了地图的下钻、缩放返回上一级数据、地图经纬度的标点及互动。</div>
-    <div class="text-small"  style="text-indent: 32px"><span class="font-bold">3. </span>进行项目优化：包括路由懒加载，代码的封装复用，首屏显示速度增加(5s-->1s)。。</div>
+    <div class="text-small"  style="text-indent: 32px;margin-top: 4px"><span class="font-bold">1. </span>负责了首页数据可视化模块。使用 Echarts 图表库实现了多种数据可视化效果，包括柱状图、折线图、饼图等，可以让用户更好地了解数据情况。</div>
+    <div class="text-small"  style="text-indent: 32px;margin-top: 4px"><span class="font-bold">2. </span>实现了地图的下钻、缩放返回上一级数据、地图经纬度的标点及互动。</div>
+    <div class="text-small"  style="text-indent: 32px;margin-top: 4px"><span class="font-bold">3. </span>进行项目优化：包括路由懒加载，代码的封装复用，首屏显示速度增加(5s-->1s)。。</div>
   </div>
 </template>
 
