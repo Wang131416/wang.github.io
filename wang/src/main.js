@@ -4,6 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VCharts from 'v-charts'
+import "echarts/map/js/world.js";
+import "echarts/map/js/china.js";
+import "echarts/extension-src/bmap/bmap.js";
 
 import 'echarts/lib/component/grid'
 

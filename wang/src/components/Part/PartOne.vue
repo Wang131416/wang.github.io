@@ -6,7 +6,7 @@
     <p>工作年限：2 年</p>
     <p>年&emsp;&emsp;龄：23</p>
     <p>联系电话：18615649060</p>
-    <p>电子邮箱：1772110826@qq.com</p>
+    <p>电子邮箱：18615649060@163.com</p>
   </div>
 </template>
 
@@ -32,10 +32,8 @@ p {
 }
 .part-one {
   width: 100%;
-  height: 500px;
-  border: 40px solid transparent;
+  height: 100%;
   background: #18202d;
-  padding-left: 10px;
 }
 .part-one-image {
   width: 150px;

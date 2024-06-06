@@ -30,13 +30,12 @@ export default {
 <style scoped>
 .part-seven {
   width: 100%;
-  height: 310px;
-  border: 40px solid transparent;
+  height: 330px;
+  padding: 10px;
   background: #18202d;
 }
 .part-sevev-responsive {
   width: 100%;
-  border: 40px solid transparent;
   background: #18202d;
 }
 .text-center {

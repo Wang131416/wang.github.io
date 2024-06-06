@@ -41,8 +41,8 @@ a:hover {
 }
 .part-five {
   width: 100%;
-  height: 310px;
-  border: 40px solid transparent;
+  height: 330px;
+  padding: 10px;
   background: #18202d;
 }
 .part-five-responsive {

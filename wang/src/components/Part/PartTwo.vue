@@ -1,183 +1,132 @@
 <template>
-  <div class="part-two" id="part-two"></div>
+  <div class="managingPatientSize">
+        <div id="china-map" style="width: 100%;height: 600px"></div>
+  </div>
 </template>
 
-
 <script>
-
+import echarts from 'echarts'
+import "../../public/static/china";
 export default {
-  name: "partTwo",
   data() {
     return {};
   },
   mounted() {
-    this.drawECharts();
+    this.drawCharts();
   },
   methods: {
-    drawECharts() {
-      // var echarts = require('echarts');
+    drawCharts() {
       // 基于准备好的dom，初始化echarts实例
-      let myChart = echarts.init(document.getElementById("part-two"));
-
-      // 排行前五城市
-      let myFirendCity = [
-        { name: "广州", value: ["113.23", "23.16", "9"] },
-        { name: "深圳", value: ["114.07", "22.62", "12"] },
-        { name: "上海", value: ["121.48", "31.22", "10"] },
-        { name: "西安", value: ["108.95", "34.27", "4"] },
-        { name: "北京", value: ["116.46", "39.92", "12"] },
-      ];
-
-      // 好友分布省份
-      let myFriendProvince = [
-        { name: "山东", value: 1 },
-        { name: "四川", value: 1 },
-        { name: "广东", value: 21 },
-        { name: "广西", value: 1 },
-        { name: "北京", value: 12 },
-        { name: "甘肃", value: 1 },
-        { name: "上海", value: 10 },
-        { name: "陕西", value: 4 },
-        { name: "湖北", value: 1 },
-        { name: "湖南", value: 1 },
-        { name: "山西", value: 1 },
-        { name: "辽宁", value: 2 },
-        { name: "江苏", value: 1 },
-        { name: "河北", value: 3 },
-        { name: "海南", value: 1 },
-        { name: "河南", value: 1 }
-      ];
-
-      myChart.setOption({
-        // 标题
-        title: {
-          text: "前端好友分布",
-          textStyle: {
-            color: "#fff"
-          },
-          subtext: "微信统计",
-          subtextStyle: {
-            color: "#fff"
-          },
-          x: "center"
-        },
-        // 移动显示
-        tooltip: {
-          trigger: "item",
-          // 鼠标移动过去显示
-          formatter: function(params) {
-            if (params.value[2] == undefined) {
-              if(!params.name) {
-                return "该地区暂无好友";
-              } else {
-                return params.name + " : " + params.value;
-              }
-            } else {
-              return params.name + " : " + params.value[2];
-            }
-          }
-        },
-        // 左边注记
-        visualMap: {
-          text: ["", "好友数"],
+      var chinaMap = echarts.init(document.getElementById("china-map"));
+      window.onresize = chinaMap.resize; // 窗口或框架被调整大小时执行chinaMap.resize
+      chinaMap.setOption({
+        // 进行相关配置
+        tooltip: {}, // 鼠标移到图里面的浮动提示框
+        dataRange: {
+          show: false,
           min: 0,
-          max: 30,
-          // 是否能通过手柄显示
+          max: 1000,
+          text: ["High", "Low"],
+          realtime: true,
           calculable: true,
-          inRange: {
-            color: ["#e4e004", "#ff5506", "#ff0000"]
-          },
-          textStyle: {
-            color: "#fff"
-          }
+          color: ["orangered", "#FF9B52", "#FFD068"],
         },
-        // geo
         geo: {
-          map: "china"
-        },
-        // 数据
-        series: [
-          // 排行前五城市
-          {
-            name: "排行前五",
-            type: "effectScatter",
-            coordinateSystem: "geo",
-            symbolSize: function(val) {
-              return val[2] * 2;
+          // 这个是重点配置区
+          map: "china", // 表示中国地图
+          roam: true,
+          label: {
+            normal: {
+              show: true, // 是否显示对应地名
+              textStyle: {
+                color: "#fff",
+              },
             },
-            showEffectOn: "render",
-            rippleEffect: {
-              brushType: "stroke"
-            },
-            hoverAnimation: true,
-            label: {
-              normal: {
-                formatter: "{b}",
-                position: "right",
-                show: true,
-                color: "#fff"
-              }
-            },
-            itemStyle: {
-              normal: {
-                color: "#ddb926",
-                shadowBlur: 10,
-                shadowColor: "#333"
-              }
-            },
-            // 类似于 z-index
-            zlevel: 1,
-            data: myFirendCity,
           },
-          // 好友分布省份
+          itemStyle: {
+            normal: {
+              borderColor: "#293171",
+              borderWidth: "2",
+              areaColor: "#0A0F33",
+            },
+            emphasis: {
+              areaColor: null,
+              shadowOffsetX: 0,
+              shadowOffsetY: 0,
+              shadowBlur: 20,
+              borderWidth: 0,
+              shadowColor: "rgba(0, 0, 0, 0.5)",
+            },
+          },
+        },
+        series: [
           {
-            name: "好友数",
+            type: "scatter",
+            coordinateSystem: "geo", // 对应上方配置
+          },
+          {
+            name: "好友位置", // 浮动框的标题
             type: "map",
-            mapType: "china",
-            // 是否允许缩放
-            roam: false,
-            label: {
-              // 显示省份标签
-              normal: {
-                formatter: myFirendCity,
-                show: false,
-                textStyle: {
-                  color: "#fff"
-                }
+            geoIndex: 0,
+            data: [
+              {
+                name: "北京",
+                value: 24,
               },
-              // 对应的鼠标悬浮效果
-              emphasis: {
-                show: false
-              }
-            },
-            itemStyle: {
-              normal: {
-                borderWidth: 0.5, // 区域边框宽度
-                borderColor: "#fff", // 区域边框颜色
-                areaColor: "deepskyblue" // 区域颜色
+              {
+                name: "上海",
+                value: 51,
               },
-              // 对应的鼠标悬浮效果
-              emphasis: {
-                borderWidth: 1,
-                borderColor: "#fff",
-                areaColor: "#00aeff"
-              }
-            },
-            // 数据
-            data: myFriendProvince
-          }
-        ]
+              {
+                name: "黑龙江",
+                value: 20,
+              },
+              {
+                name: "深圳",
+                value: 34,
+              },
+              {
+                name: "湖北",
+                value: 2,
+              },
+              {
+                name: "四川",
+                value: 15,
+              },
+              {
+                name: "内蒙古",
+                value: 4,
+              },
+              {
+                name: "山东",
+                value: 14,
+              },
+              {
+                name: "天津",
+                value: 25,
+              },{
+                name: "重庆",
+                value: 43,
+              },
+            ],
+          },
+        ],
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style scoped>
-.part-two {
-  width: 100%;
-  height: 500px;
-  border: 40px solid transparent;
+.managingPatientSize {
+  height: 100%;
+  color: #fff;
+  position: relative;
   background: #18202d;
+}
+#china-map {
+  height: 100%;
+  position: absolute;
+  z-index: 999;
 }
 </style>

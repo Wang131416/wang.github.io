@@ -27,7 +27,8 @@ export default {
             color: "#fff"
           },
           // 标题位置
-          x: "center"
+          x: "center",
+          top:60,
         },
         // 移动显示
         tooltip: {
@@ -78,8 +79,7 @@ export default {
 <style scoped>
 .chartBox {
              width: 100%;
-             height: 500px;
-             border: 40px solid transparent;
+             height: 600px;
              background: #18202d;
 }
 </style>

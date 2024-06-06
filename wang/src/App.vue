@@ -1,35 +1,37 @@
 <template>
   <div class="app" id="app">
     <div class="banner">
-      <img class="hidden-md-only hidden-lg-only hidden-xl-only" src="./assets/header_bg.png" alt="banner 图">
+
+        <div class="logo-img"><img src="./assets/header_bg.png" /></div>
+        <div class="logo-title">个人简历</div>
     </div>
     <!-- 第一行 -->
-    <el-row>
-      <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6" class="part">
+    <div class="topTitle">
+      <div class="left">
         <router-view name="PartOne"/>
-      </el-col>
-      <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12" class="part">
-        <router-view name="PartTwo"/>
-      </el-col>
-      <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6" class="part">
+      </div>
+      <div class="content">
+      <router-view name="PartTwo"/>
+      </div>
+      <div class="right">
         <router-view name="PartThree"/>
-      </el-col>
-    </el-row>
+      </div>
+    </div>
     <!-- 第二行 -->
-    <el-row>
-      <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8" class="part">
+    <div class="bottomTitle">
+      <div class="left1">
         <router-view name="PartFour"/>
-      </el-col>
-      <el-col :xs="24" :sm="24" :md="8" :lg="8" :xl="8" class="part">
+      </div>
+      <div class="left2">
         <router-view name="PartFive"/>
-      </el-col>
-      <el-col :xs="24" :sm="24" :md="4" :lg="4" :xl="4" class="part">
+      </div>
+      <div class="right1">
         <router-view name="PartSix"/>
-      </el-col>
-      <el-col :xs="24" :sm="24" :md="4" :lg="4" :xl="4" class="part">
+      </div>
+      <div class="right2">
         <router-view name="PartSeven"/>
-      </el-col>
-    </el-row>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -54,11 +56,57 @@ body {
 .part {
   padding: 20px;
 }
-.banner img {
-  width: 100%;
-  height: 80px;
+.topTitle{
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+.topTitle .left{
+  width: 25%;
+  height: 600px;
+  padding-left: 20px;
+}
+.topTitle .right{
+  width: 25%;
+  height: 600px;
+}
+.topTitle .content{
+  width: 43%;
+  height: 600px;
+}
+.banner{
+  height: 54px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+.banner .logo-img {
+  width: 54px;
+  height: 54px;
+}
+
+.banner .logo-title {
+  margin-left: 18px;
+  margin-top: 18px;
+  font-size: 30px;
+  font-weight: 400;
 }
 p {
   text-align: center;
 }
+.bottomTitle{
+  width: 100%;
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+.bottomTitle .left1{
+  width: 25%;
+}
+.bottomTitle .left2{
+  width: 25%;}
+.bottomTitle .right1{
+  width: 25%;}
+.bottomTitle .right2{
+  width: 25%;}
 </style>
