@@ -31,14 +31,16 @@ export default {
 .part-seven {
   width: 100%;
   height: 330px;
-  padding: 10px;
-  background: #18202d;
+  background: rgba(24,32,45,.3);
 }
 .part-sevev-responsive {
   width: 100%;
-  background: #18202d;
+  background: rgba(24,32,45,.3);
 }
 .text-center {
+  width: 100%;
+  margin-top: 15px;
+  display: inline-block;
   text-align: center;
 }
 .text-small {

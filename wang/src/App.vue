@@ -1,5 +1,5 @@
 <template>
-  <div class="app" id="app">
+  <div class="app" id="app" ref="vantaRef">
     <div class="banner">
 
         <div class="logo-img"><img src="./assets/header_bg.png" /></div>
@@ -36,12 +36,27 @@
 </template>
 
 <script>
+import * as THREE from 'three'
+import BIRDS from 'vanta/src/vanta.birds'
+
 export default {
   name: "App",
   data() {
     return {
     };
-  }
+  },
+  mounted() {
+    this.vantaEffect = BIRDS({
+      el: this.$refs.vantaRef,
+      THREE: THREE
+    })
+  },
+  beforeDestroy() {
+    if (this.vantaEffect) {
+      this.vantaEffect.destroy()
+    }
+  },
+
 };
 </script>
 
@@ -95,18 +110,21 @@ p {
   text-align: center;
 }
 .bottomTitle{
-  width: 100%;
   margin-top: 24px;
   display: flex;
   justify-content: space-between;
 }
 .bottomTitle .left1{
-  width: 25%;
+  width: 24%;
 }
 .bottomTitle .left2{
-  width: 25%;}
+  width: 24%;
+}
 .bottomTitle .right1{
-  width: 25%;}
+  width: 24%;
+}
 .bottomTitle .right2{
-  width: 25%;}
+  width: 24%;
+}
+
 </style>

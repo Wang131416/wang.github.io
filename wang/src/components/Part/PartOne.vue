@@ -33,7 +33,7 @@ p {
 .part-one {
   width: 100%;
   height: 100%;
-  background: #18202d;
+  background: rgba(24,32,45,.3);
 }
 .part-one-image {
   width: 150px;

@@ -6,11 +6,11 @@
       <a href="javascript:void(0)">北京联方智慧科技有限公司</a>
       <span class="text-small">| 2023/04 - 至今</span>
     </p>
-    <p class="text-small">工作内容：Vue + ECharts</p>
-    <p class="text-small">成就：</p>
-    <p class="text-small">&emsp;1. 首页数据可视化模块，首屏显示速度增加，与后端协同开发</p>
-    <p class="text-small">&emsp;2. ECharts 报表汇总。使用 Vue + ECharts 进行报表设计</p>
-    <p class="text-small">&emsp;3. 项目的样式更替</p>
+    <div class="text-small">工作内容：Vue + ECharts</div>
+    <div class="text-small">成就：</div>
+    <div class="text-small" style="text-indent: 32px">&emsp;<span class="font-bold">1.</span> 首页数据可视化模块，首屏显示速度增加，与后端协同开发</div>
+    <div class="text-small" style="text-indent: 32px"><span class="font-bold">2.</span> ECharts 报表汇总。使用 Vue + ECharts 进行报表设计</div>
+    <div class="text-small" style="text-indent: 32px"><span class="font-bold">3. </span>项目的样式更替</div>
   </div>
 </template>
 
@@ -42,19 +42,27 @@ a:hover {
 .part-five {
   width: 100%;
   height: 330px;
-  padding: 10px;
-  background: #18202d;
+  padding-left: 15px;
+  background: rgba(24,32,45,.3);
 }
 .part-five-responsive {
   width: 100%;
   border: 40px solid transparent;
-  background: #18202d;
+  background: rgba(24,32,45,.3);
 }
 .text-center {
+  width: 100%;
+  margin-top: 15px;
+  display: inline-block;
   text-align: center;
 }
 .text-small {
   font-size: 0.9em;
   color: rgb(253, 239, 239);
+}
+
+.font-bold {
+  text-align: center;
+  color: deepskyblue;
 }
 </style>

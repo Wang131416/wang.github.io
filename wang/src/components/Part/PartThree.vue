@@ -80,6 +80,6 @@ export default {
 .chartBox {
              width: 100%;
              height: 600px;
-             background: #18202d;
+  background: rgba(24,32,45,.3);
 }
 </style>

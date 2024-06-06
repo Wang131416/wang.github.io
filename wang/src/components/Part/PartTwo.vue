@@ -75,23 +75,23 @@ export default {
               },
               {
                 name: "上海",
-                value: 51,
+                value: 11,
               },
               {
                 name: "黑龙江",
-                value: 20,
+                value: 5,
               },
               {
                 name: "深圳",
-                value: 34,
+                value: 15,
               },
               {
                 name: "湖北",
-                value: 2,
+                value: 1,
               },
               {
                 name: "四川",
-                value: 15,
+                value: 11,
               },
               {
                 name: "内蒙古",
@@ -99,18 +99,29 @@ export default {
               },
               {
                 name: "山东",
-                value: 14,
+                value: 17,
               },
               {
                 name: "天津",
-                value: 25,
+                value: 15,
               },{
                 name: "重庆",
-                value: 43,
+                value: 23,
               },
             ],
           },
         ],
+        title: {
+          // 标题文本
+          text: "好友所距位置",
+          // 标题样式
+          textStyle: {
+            color: "#fff"
+          },
+          // 标题位置
+          x: "center",
+          top:60,
+        },
       });
     },
   },
@@ -122,7 +133,7 @@ export default {
   height: 100%;
   color: #fff;
   position: relative;
-  background: #18202d;
+  background: rgba(24,32,45,.3);
 }
 #china-map {
   height: 100%;
